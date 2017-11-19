@@ -1,0 +1,20 @@
+[
+    {
+        "route": "Home",
+        "label": "Home",
+        "icon": "home",
+        "popular": true
+    },
+    {
+        "route": "Info",
+        "label": "Info",
+        "icon": "information-circle",
+        "popular": false
+    },
+    {
+        "route": "Contact",
+        "label": "Contact",
+        "icon": "mail",
+        "popular": true
+    }
+]
