@@ -13,31 +13,23 @@ class Drawer extends React.Component {
 
     return <Container>
       <Content>
-
         <Image
           source={{
             uri: 'http://ngstudentexpeditions.com/wp-content/uploads/2016/10/L-NationalGeographic_1370994cropped.jpg'
           }}
           style={{
-            height: 150,
+            height: 120,
             alignSelf: 'stretch',
             justifyContent: 'center',
             alignItems: 'center'
           }}>
-          <Image
-            square
-            style={{height: 80, width: 70}}
-            source={{
-              uri: 'https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/img/logo.png',
-            }}
-          />
         </Image>
 
         <List dataArray={menu}
               renderRow={(r, key) =>
                 <ListItem icon button key={key} onPress={() => navigate(r.route)}>
                   <Left>
-                    <Icon name={r.icon} style={{color: '#888888'}}/>
+                    <Icon name={r.icon} style={{color: 'grey'}}/>
                   </Left>
                   <Body>
                     <Text>{r.label}</Text>

@@ -17,8 +17,4 @@ class Info extends React.Component {
   }
 }
 
-Info.propTypes = {
-  navigate: PropTypes.func.isRequired
-}
-
 export default Info
