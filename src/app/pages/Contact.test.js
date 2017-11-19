@@ -1,7 +1,7 @@
-import React from 'react';
-import {Contact} from '../../app/pages';
+import React from 'react'
+import {Contact} from '../../app/pages'
 
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
 
 it('renders without crashing', () => {
   const props = {
@@ -10,6 +10,6 @@ it('renders without crashing', () => {
       state: {},
     }
   }
-  const rendered = renderer.create(<Contact {...props}/>).toJSON();
-  expect(rendered).toBeTruthy();
-});
+  const rendered = renderer.create(<Contact {...props}/>).toJSON()
+  expect(rendered).toBeTruthy()
+})

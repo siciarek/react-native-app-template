@@ -7,7 +7,6 @@ import {
   Text,
 } from 'native-base'
 import {NavFooter, Header} from '../../app/widgets'
-
 class Home extends React.Component {
 
   render() {

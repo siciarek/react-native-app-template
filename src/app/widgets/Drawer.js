@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Container, Content, Text, List, ListItem, Icon, Left, Body, Right} from 'native-base'
-import {Image, StatusBar} from 'react-native';
+import {Image, StatusBar} from 'react-native'
 
 const menu = require('../../menu.json')
 

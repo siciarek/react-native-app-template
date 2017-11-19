@@ -1,5 +1,5 @@
 import React from 'react'
-import {Drawer} from '../../app/widgets'
+import {Map} from '../../app/pages'
 
 import renderer from 'react-test-renderer'
 
@@ -10,6 +10,6 @@ it('renders without crashing', () => {
       state: {},
     }
   }
-  const rendered = renderer.create(<Drawer {...props} />).toJSON()
+  const rendered = renderer.create(<Map {...props} />).toJSON()
   expect(rendered).toBeTruthy()
 })

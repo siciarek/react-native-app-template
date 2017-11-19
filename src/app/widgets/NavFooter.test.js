@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import {NavFooter} from '../../app/widgets'
 
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
 
 it('renders without crashing', () => {
   const rendered = renderer.create(<NavFooter />).toJSON()

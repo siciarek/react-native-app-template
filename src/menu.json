@@ -16,5 +16,11 @@
         "label": "Contact",
         "icon": "mail",
         "popular": true
+    },
+    {
+        "route": "Map",
+        "label": "Map",
+        "icon": "map",
+        "popular": true
     }
 ]
