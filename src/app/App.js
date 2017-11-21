@@ -3,16 +3,18 @@ import {DrawerNavigator} from 'react-navigation'
 import {Drawer} from '../app/widgets'
 import {
   Home,
-  Info,
-  Contact,
-  Map
+  Poland,
+  YouAreHere,
+  AddSingleMarker,
+  Clique,
 } from '../app/pages'
 
 const pages = {
   Home: {screen: Home},
-  Info: {screen: Info},
-  Contact: {screen: Contact},
-  Map: {screen: Map},
+  Poland: {screen: Poland},
+  YouAreHere: {screen: YouAreHere},
+  AddSingleMarker: {screen: AddSingleMarker},
+  Clique: {screen: Clique},
 }
 
 const settings = {

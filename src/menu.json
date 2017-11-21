@@ -1,26 +1,32 @@
 [
     {
         "route": "Home",
-        "label": "Home",
+        "label": "Start",
         "icon": "home",
         "popular": true
     },
     {
-        "route": "Info",
-        "label": "Info",
-        "icon": "information-circle",
+        "route": "Poland",
+        "label": "Polska",
+        "icon": "map",
         "popular": false
     },
     {
-        "route": "Contact",
-        "label": "Contact",
-        "icon": "mail",
+        "route": "YouAreHere",
+        "label": "Jesteś tutaj",
+        "icon": "locate",
         "popular": true
     },
     {
-        "route": "Map",
-        "label": "Map",
-        "icon": "map",
+        "route": "AddSingleMarker",
+        "label": "Dodaj marker",
+        "icon": "pin",
+        "popular": true
+    },
+    {
+        "route": "Clique",
+        "label": "Utwórz klikę",
+        "icon": "link",
         "popular": true
     }
 ]

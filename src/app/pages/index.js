@@ -1,12 +1,13 @@
 import Home from '../../app/pages/Home'
-import Info from '../../app/pages/Info'
-import Contact from '../../app/pages/Contact'
-import Map from '../../app/pages/Map'
+import Poland from '../../app/pages/Poland'
+import YouAreHere from '../../app/pages/YouAreHere'
+import AddSingleMarker from '../../app/pages/AddSingleMarker'
+import Clique from '../../app/pages/Clique'
 
 export {
   Home,
-  Info,
-  Contact,
-  Map,
+  Poland,
+  YouAreHere,
+  AddSingleMarker,
+  Clique,
 }
-
