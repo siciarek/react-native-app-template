@@ -1,16 +1,16 @@
 {
   "expo": {
     "sdkVersion": "22.0.0",
-    "name": "React Native App Template",
+    "name": "Apka z mapami",
     "icon": "./app-icon.png",
     "version": "1.0.0",
-    "slug": "react-native-app-template",
+    "slug": "apka-z-mapami",
     "privacy": "unlisted",
     "ios": {
-      "bundleIdentifier": "com.siciarek.template"
+      "bundleIdentifier": "com.siciarek.demo.maps"
     },
     "android": {
-      "package": "com.siciarek.template"
+      "package": "com.siciarek.demo.maps"
     }
   }
 }
