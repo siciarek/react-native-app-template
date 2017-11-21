@@ -13,7 +13,8 @@ class AddSingleMarker extends React.Component {
     super(props)
 
     this.state = {
-      location: null
+      location: null,
+      markers: [],
     }
 
     navigator.geolocation.getCurrentPosition(
@@ -30,9 +31,7 @@ class AddSingleMarker extends React.Component {
     }
 
     const {title, delta, navigation: {navigate}} = this.props
-
-    const {location: {coords}} = this.state;
-    const markers = [coords]
+    const {location: {coords}, markers} = this.state
 
     return <Container>
       <Header title={title} navigate={navigate}/>
