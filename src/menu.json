@@ -1,30 +1,30 @@
 [
     {
-        "route": "Home",
+        "page": "Home",
         "label": "Start",
         "icon": "home",
         "popular": true
     },
     {
-        "route": "Poland",
+        "page": "Poland",
         "label": "Polska",
         "icon": "map",
-        "popular": false
+        "popular": true
     },
     {
-        "route": "YouAreHere",
+        "page": "YouAreHere",
         "label": "Jesteś tutaj",
         "icon": "locate",
         "popular": true
     },
     {
-        "route": "AddSingleMarker",
+        "page": "AddSingleMarker",
         "label": "Dodaj marker",
         "icon": "pin",
         "popular": true
     },
     {
-        "route": "Clique",
+        "page": "Clique",
         "label": "Utwórz klikę",
         "icon": "link",
         "popular": true

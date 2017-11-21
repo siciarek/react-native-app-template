@@ -1,12 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Container,
-  Content,
-  Button,
-  Text,
-} from 'native-base'
-import {NavFooter, Header} from '../../app/widgets'
+import {Button, Container, Content, Text,} from 'native-base'
+import {Header} from '../../app/widgets'
+
 class Home extends React.Component {
 
   render() {

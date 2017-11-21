@@ -1,31 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
+  Body,
+  Button,
   Container,
   Content,
-  Header as BaseHeader,
-  Left,
-  Body,
-  Right,
   Footer,
   FooterTab,
-  Button,
+  Header as BaseHeader,
   Icon,
+  Left,
+  Right,
   Title,
 } from 'native-base'
 
 const Header = ({title, navigate}) =>
-    <BaseHeader>
-      <Left>
-        <Button transparent onPress={() => navigate('DrawerOpen')}>
-          <Icon name="menu"/>
-        </Button>
-      </Left>
-      <Body>
-      <Title>{title}</Title>
-      </Body>
-      <Right/>
-    </BaseHeader>
+  <BaseHeader>
+    <Left>
+      <Button transparent onPress={() => navigate('DrawerOpen')}>
+        <Icon name="menu"/>
+      </Button>
+    </Left>
+    <Body>
+    <Title>{title}</Title>
+    </Body>
+    <Right/>
+  </BaseHeader>
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
@@ -34,7 +34,8 @@ Header.propTypes = {
 
 Header.defaultProps = {
   title: 'Application',
-  navigate: () => {},
+  navigate: () => {
+  },
 }
 
 export default Header
