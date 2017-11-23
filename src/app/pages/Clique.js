@@ -35,16 +35,24 @@ class Clique extends React.Component {
 
     return <Container>
       <Header title={title} navigate={navigate}/>
-      <Map onPress={({coordinate}) => this.setState({
-          markers: [
-            {
-              draggable: true,
-              ...coordinate
-            },
-            ...markers
-          ]
-        })}
-        location={coords} markers={markers} delta={delta}/>
+      <Map location={coords}
+           markers={markers}
+           delta={delta}
+           moveOnMarkerPress={false}
+           onMarkerPress={({coordinate}) => {
+             const markers = this.state.markers.filter(marker =>
+               !(coordinate.latitude === marker.latitude
+               && coordinate.longitude === marker.longitude)
+             )
+             this.setState({markers: markers})
+           }}
+           onPress={({coordinate}) => this.setState({
+             markers: [
+               {draggable: true, ...coordinate},
+               ...markers
+             ]
+           })}
+      />
     </Container>
   }
 }

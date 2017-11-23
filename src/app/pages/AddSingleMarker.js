@@ -35,17 +35,17 @@ class AddSingleMarker extends React.Component {
 
     return <Container>
       <Header title={title} navigate={navigate}/>
-      <Map onPress={({coordinate}) => this.setState({
-        markers: [
-          {
-            draggable: true,
-            ...coordinate
-          }
-        ]
-      })}
-           location={coords}
+      <Map location={coords}
            markers={markers}
-           delta={delta}/>
+           delta={delta}
+           moveOnMarkerPress={false}
+           onMarkerPress={({coordinate}) => this.setState({markers:[]})}
+           onPress={({coordinate}) => this.setState({
+             markers: [
+               {draggable: true, ...coordinate}
+             ]
+           })}
+      />
     </Container>
   }
 }
