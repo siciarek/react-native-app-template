@@ -8,33 +8,40 @@ import {
 import MapView from 'react-native-maps'
 import {Dimensions} from 'react-native'
 
-const Map = ({location: {latitude, longitude}, markers, delta}) => {
+class Map extends React.Component {
 
-  const {width, height} = Dimensions.get('window')
-  const aspectRatio = width / height
-  const latitudeDelta = delta
-  const longitudeDelta = latitudeDelta * aspectRatio
+  render() {
+    const {location: {latitude, longitude}, markers, delta, onPress} = this.props
+    const {width, height} = Dimensions.get('window')
+    const aspectRatio = width / height
+    const latitudeDelta = delta
+    const longitudeDelta = latitudeDelta * aspectRatio
 
-  return <Content>
-    <MapView
-      style={{width, height}}
-      initialRegion={{
-        latitude,
-        longitude,
-        latitudeDelta,
-        longitudeDelta,
-      }}
-    >
-      {
-        markers.map(({latitude, longitude}, key) =>
-          <MapView.Marker key={key} coordinate={{latitude, longitude}}/>
-        )
-      }
-    </MapView>
-  </Content>
+    return <Content>
+      <MapView
+        onPress={({nativeEvent}) => onPress(nativeEvent)}
+        style={{width, height}}
+        initialRegion={{
+          latitude,
+          longitude,
+          latitudeDelta,
+          longitudeDelta,
+        }}
+      >
+        {
+          markers.map(({latitude, longitude, draggable = false}, key) =>
+            <MapView.Marker
+              draggable={draggable}
+              key={key} coordinate={{latitude, longitude}}/>
+          )
+        }
+      </MapView>
+    </Content>
+  }
 }
 
 Map.propTypes = {
+  onPress: PropTypes.func.isRequired,
   location: PropTypes.shape({
     latitude: PropTypes.number.isRequired,
     longitude: PropTypes.number.isRequired,
@@ -44,6 +51,7 @@ Map.propTypes = {
 }
 
 Map.defaultProps = {
+  onPress: event => {},
   location: {
     latitude: 52.0693234,
     longitude: 19.4803112,
