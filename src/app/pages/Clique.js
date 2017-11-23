@@ -1,9 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
+  Footer,
+  FooterTab,
+  Icon,
+  Text,
+  Button,
+
   Container,
   Content,
-  Button,
 } from 'native-base'
 import {Header, Loader, Map} from '../../app/widgets'
 
@@ -15,6 +20,7 @@ class Clique extends React.Component {
     this.state = {
       location: null,
       markers: [],
+      paths: [],
     }
 
     navigator.geolocation.getCurrentPosition(
@@ -31,12 +37,13 @@ class Clique extends React.Component {
     }
 
     const {title, delta, navigation: {navigate}} = this.props
-    const {location: {coords}, markers} = this.state;
+    const {location: {coords}, markers, paths} = this.state;
 
     return <Container>
       <Header title={title} navigate={navigate}/>
       <Map location={coords}
            markers={markers}
+           paths={paths}
            delta={delta}
            moveOnMarkerPress={false}
            onMarkerPress={({coordinate}) => {
@@ -44,15 +51,48 @@ class Clique extends React.Component {
                !(coordinate.latitude === marker.latitude
                && coordinate.longitude === marker.longitude)
              )
-             this.setState({markers: markers})
+             this.setState({markers: markers, paths: []})
            }}
            onPress={({coordinate}) => this.setState({
              markers: [
                {draggable: true, ...coordinate},
                ...markers
-             ]
+             ],
+             paths:[],
            })}
       />
+      <Footer>
+      <FooterTab>
+        <Button vertical active={true} onPress={() => this.setState({markers: []})}>
+          <Icon name="remove-circle"/>
+          <Text>Wyczyść mapę</Text>
+        </Button>
+
+        <Button active={true}
+                vertical
+                onPress={() => {
+
+                  const paths = this.state.markers.map(current => {
+                    const others = this.state.markers.filter(m => false === (current.latitude === m.latitude && current.longitude === m.longitude))
+                    return others.map(({latitude, longitude}) => [
+                      {latitude: current.latitude, longitude: current.longitude},
+                      {latitude, longitude},
+                    ])
+                  })
+
+                  let newpaths = []
+
+                  paths.map(path => {
+                    newpaths = [...newpaths, ...path]
+                  })
+
+                  this.setState({paths: newpaths})
+                }}>
+          <Icon name="sync"/>
+          <Text>Utwórz klikę</Text>
+        </Button>
+      </FooterTab>
+    </Footer>
     </Container>
   }
 }
