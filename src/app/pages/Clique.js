@@ -63,8 +63,8 @@ class Clique extends React.Component {
       />
       <Footer>
       <FooterTab>
-        <Button vertical active={true} onPress={() => this.setState({markers: []})}>
-          <Icon name="remove-circle"/>
+        <Button vertical active={true} onPress={() => this.setState({markers: [], paths: []})}>
+          <Icon name="close-circle"/>
           <Text>Wyczyść mapę</Text>
         </Button>
 

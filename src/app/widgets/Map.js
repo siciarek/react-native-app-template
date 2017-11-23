@@ -16,7 +16,7 @@ class Map extends React.Component {
     const aspectRatio = width / height
     const latitudeDelta = delta
     const longitudeDelta = delta * aspectRatio
-    const strokeColor = '#F00'
+    const strokeColor = '#777'
 
     return <Content>
       <MapView
@@ -32,14 +32,7 @@ class Map extends React.Component {
         }}
       >
         {
-          paths.map((path, key) =>
-            <MapView.Polyline
-              key={key}
-              coordinates={path}
-              strokeWidth={2}
-              strokeColor={strokeColor}
-            />
-          )
+          paths.map((path, key) => <MapView.Polyline key={key} coordinates={path} strokeWidth={2} strokeColor={strokeColor}/>)
         }
         {
           markers.map(({latitude, longitude, draggable = false}, key) =>
