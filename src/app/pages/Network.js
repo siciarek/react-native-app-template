@@ -12,7 +12,7 @@ import {
 } from 'native-base'
 import {Header, Loader, Map} from '../../app/widgets'
 
-class Clique extends React.Component {
+class Network extends React.Component {
 
   constructor(props) {
     super(props)
@@ -97,14 +97,14 @@ class Clique extends React.Component {
   }
 }
 
-Clique.propTypes = {
+Network.propTypes = {
   title: PropTypes.string.isRequired,
   delta: PropTypes.number.isRequired,
 }
 
-Clique.defaultProps = {
+Network.defaultProps = {
   title: 'Utwórz sieć',
   delta: 0.5,
 }
 
-export default Clique
+export default Network

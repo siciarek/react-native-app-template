@@ -1,5 +1,5 @@
 import React from 'react'
-import {Home} from '../../app/pages'
+import {Info} from '../../app/pages'
 
 import renderer from 'react-test-renderer'
 
@@ -10,6 +10,6 @@ it('renders without crashing', () => {
       state: {},
     }
   }
-  const rendered = renderer.create(<Home {...props}/>).toJSON()
+  const rendered = renderer.create(<Info {...props}/>).toJSON()
   expect(rendered).toBeTruthy()
 })

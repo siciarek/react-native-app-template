@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import {Button, Container, Content, Text,} from 'native-base'
 import {Header} from '../../app/widgets'
 
-class Home extends React.Component {
+class Info extends React.Component {
 
   render() {
     const {navigate} = this.props.navigation
 
     return <Container>
-      <Header title="Start" navigate={navigate}/>
+      <Header title="Info" navigate={navigate}/>
 
       <Content padder>
         <Text>Lorem ipsum dolor sit amet.</Text>
@@ -19,12 +19,12 @@ class Home extends React.Component {
   }
 }
 
-Home.propTypes = {
+Info.propTypes = {
   navigate: PropTypes.func.isRequired
 }
 
-Home.defaultProps = {
+Info.defaultProps = {
   navigate: () => {}
 }
 
-export default Home
+export default Info

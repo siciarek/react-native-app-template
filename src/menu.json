@@ -1,12 +1,12 @@
 [
     {
-        "page": "Home",
-        "label": "Start",
-        "icon": "home",
+        "page": "Info",
+        "label": "Info",
+        "icon": "information-circle",
         "popular": true
     },
     {
-        "page": "Poland",
+        "page": "Country",
         "label": "Polska",
         "icon": "map",
         "popular": true
@@ -24,7 +24,7 @@
         "popular": true
     },
     {
-        "page": "Clique",
+        "page": "Network",
         "label": "Utwórz sieć",
         "icon": "link",
         "popular": true

@@ -7,7 +7,7 @@ import {
 } from 'native-base'
 import {Header, Map} from '../../app/widgets'
 
-class Poland extends React.Component {
+class Country extends React.Component {
 
   render() {
     const {title, navigation: {navigate}} = this.props
@@ -22,12 +22,12 @@ class Poland extends React.Component {
   }
 }
 
-Poland.propTypes = {
+Country.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-Poland.defaultProps = {
+Country.defaultProps = {
   title: 'Polska',
 }
 
-export default Poland
+export default Country
