@@ -42,7 +42,7 @@ class AddSingleMarker extends React.Component {
            onMarkerPress={({coordinate}) => this.setState({markers:[]})}
            onPress={({coordinate}) => this.setState({
              markers: [
-               {draggable: true, ...coordinate}
+               {...coordinate, draggable: true}
              ]
            })}
       />

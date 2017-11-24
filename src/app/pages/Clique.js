@@ -55,7 +55,7 @@ class Clique extends React.Component {
            }}
            onPress={({coordinate}) => this.setState({
              markers: [
-               {draggable: true, ...coordinate},
+               {...coordinate, draggable: false},
                ...markers
              ],
              paths:[],
@@ -89,7 +89,7 @@ class Clique extends React.Component {
                   this.setState({paths: newpaths})
                 }}>
           <Icon name="sync"/>
-          <Text>Utwórz klikę</Text>
+          <Text>Utwórz sieć</Text>
         </Button>
       </FooterTab>
     </Footer>
@@ -103,7 +103,7 @@ Clique.propTypes = {
 }
 
 Clique.defaultProps = {
-  title: 'Utwórz klikę',
+  title: 'Utwórz sieć',
   delta: 0.5,
 }
 

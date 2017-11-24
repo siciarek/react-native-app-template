@@ -1,51 +1,45 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Container,
-  Content,
-} from 'native-base'
+import {Content} from 'native-base'
 
 import MapView from 'react-native-maps'
 import {Dimensions} from 'react-native'
 
-class Map extends React.Component {
+const Map = ({location: {latitude, longitude}, markers, delta, moveOnMarkerPress, onPress, onMarkerPress, paths}) => {
 
-  render() {
-    const {location: {latitude, longitude}, markers, delta, moveOnMarkerPress, onPress, onMarkerPress, paths} = this.props
     const {width, height} = Dimensions.get('window')
     const aspectRatio = width / height
     const latitudeDelta = delta
     const longitudeDelta = delta * aspectRatio
+    const initialRegion = {
+      latitude,
+      longitude,
+      latitudeDelta,
+      longitudeDelta,
+    }
     const strokeColor = '#777'
+    const strokeWidth = 2
 
     return <Content>
       <MapView
-        moveOnMarkerPress={moveOnMarkerPress}
         onPress={({nativeEvent}) => onPress(nativeEvent)}
         onMarkerPress={({nativeEvent}) => onMarkerPress(nativeEvent)}
+        moveOnMarkerPress={moveOnMarkerPress}
         style={{width, height}}
-        initialRegion={{
-          latitude,
-          longitude,
-          latitudeDelta,
-          longitudeDelta,
-        }}
+        initialRegion={initialRegion}
       >
         {
-          paths.map((path, key) => <MapView.Polyline key={key} coordinates={path} strokeWidth={2} strokeColor={strokeColor}/>)
+          paths.map((path, key) =>
+            <MapView.Polyline geodesic coordinates={path} strokeWidth={strokeWidth} strokeColor={strokeColor} key={key}/>)
         }
         {
           markers.map(({latitude, longitude, draggable = false}, key) =>
-            <MapView.Marker
-              id={key}
-              draggable={draggable}
-              key={key} coordinate={{latitude, longitude}}/>
+            <MapView.Marker draggable={draggable} coordinate={{latitude, longitude}} key={key}/>
           )
         }
       </MapView>
     </Content>
   }
-}
 
 Map.propTypes = {
   onPress: PropTypes.func.isRequired,

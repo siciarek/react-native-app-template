@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#eca611'
+    color: '#999',
   },
   container: {
     flex: 1,
