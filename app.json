@@ -1,16 +1,18 @@
 {
   "expo": {
-    "sdkVersion": "22.0.0",
     "name": "Apka z mapką",
-    "icon": "./app-icon.png",
+    "description": "Applikacja React Native demonstrująca korzystanie z map i danych geolokacyjnych.",
+    "slug": "apka-z-mapka",
+    "privacy": "public",
+    "sdkVersion": "22.0.0",
     "version": "1.0.0",
-    "slug": "apka-z-mapami",
-    "privacy": "unlisted",
+    "orientation": "portrait",
+    "icon": "./app-icon.png",
     "ios": {
-      "bundleIdentifier": "com.siciarek.demo.maps"
+      "bundleIdentifier": "com.siciarek.demo.map"
     },
     "android": {
-      "package": "com.siciarek.demo.maps"
+      "package": "com.siciarek.demo.map"
     }
   }
 }
