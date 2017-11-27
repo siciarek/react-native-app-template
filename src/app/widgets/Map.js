@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Content} from 'native-base'
 
-import MapView from 'react-native-maps'
+import {MapView} from 'expo'
 import {Dimensions} from 'react-native'
 
 const Map = ({location: {latitude, longitude}, markers, delta, moveOnMarkerPress, onPress, onMarkerPress, paths}) => {
