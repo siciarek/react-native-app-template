@@ -11,8 +11,20 @@
     "ios": {
       "bundleIdentifier": "com.siciarek.demo.map"
     },
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain"
+    },
     "android": {
-      "package": "com.siciarek.demo.map"
+      "package": "com.siciarek.demo.map",
+      "config": {
+        "googleSignIn": {
+          "apiKey" : "AIzaSyBF9UklpMTbIUkYriJbvl_y0YVNuE5KGA4"
+        },
+        "googleMaps": {
+          "apiKey" : "AIzaSyBF9UklpMTbIUkYriJbvl_y0YVNuE5KGA4"
+        }
+      }
     }
   }
 }
